@@ -60,6 +60,10 @@ app.event('app_home_opened', async ({ event, client, context }) => {
     }
 });
 
+app.message('Hello', async ({ message, say }) => {
+    await say(`Hello, <@${message.user}>`);
+});
+
 (async () => {
     await app.start(process.env.PORT || 3000);
 
